@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SkillRemotely Academy | Global Remote Career Training</title>
+    <title>SkillRemotely Academy | #1 Edutech for Global Remote Careers</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
@@ -15,12 +15,13 @@
             --white: #ffffff;
             --off-white: #F9FAFB;
             --slate: #475569;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Plus Jakarta Sans', sans-serif; }
-        body { background-color: var(--white); color: var(--navy); line-height: 1.6; scroll-behavior: smooth; }
+        body { background-color: var(--white); color: var(--navy); line-height: 1.6; scroll-behavior: smooth; overflow-x: hidden; }
         
-        /* Nav */
+        /* Navigation */
         nav {
             display: flex; justify-content: space-between; align-items: center;
             padding: 1rem 8%; position: sticky; top: 0;
@@ -30,73 +31,96 @@
         .logo { font-size: 1.6rem; font-weight: 800; color: var(--navy); text-decoration: none; letter-spacing: -1px; }
         .logo span { color: var(--yellow); }
         .nav-links { display: flex; gap: 2rem; list-style: none; }
-        .nav-links a { text-decoration: none; color: var(--slate); font-weight: 600; font-size: 0.95rem; }
+        .nav-links a { text-decoration: none; color: var(--slate); font-weight: 600; font-size: 0.95rem; transition: var(--transition); }
+        .nav-links a:hover { color: var(--navy); }
 
         /* Buttons */
         .btn {
             padding: 0.8rem 1.6rem; border-radius: 8px; text-decoration: none;
-            font-weight: 700; transition: 0.3s; display: inline-block; text-align: center;
+            font-weight: 700; transition: var(--transition); display: inline-block; text-align: center; cursor: pointer;
         }
         .btn-yellow { background: var(--yellow); color: var(--navy); border: 2px solid var(--yellow); }
         .btn-navy { background: var(--navy); color: var(--white); border: 2px solid var(--navy); }
-        .btn:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); }
+        .btn:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); }
 
-        /* Hero */
-        .hero { padding: 8rem 8% 5rem; background: radial-gradient(circle at top right, #000866, var(--navy)); color: white; text-align: center; }
-        .hero h1 { font-size: clamp(2.5rem, 5vw, 4rem); line-height: 1.1; margin-bottom: 1.5rem; font-weight: 800; }
+        /* Hero Section */
+        .hero { padding: 10rem 8% 8rem; background: radial-gradient(circle at top right, #000866, var(--navy)); color: white; text-align: center; }
+        .hero h1 { font-size: clamp(2.5rem, 6vw, 4.5rem); line-height: 1.1; margin-bottom: 1.5rem; font-weight: 800; }
         .hero p { font-size: 1.25rem; color: #e2e8f0; max-width: 800px; margin: 0 auto 2.5rem; }
 
-        /* Stats */
-        .stats { background: var(--yellow); padding: 2rem 8%; display: flex; justify-content: space-around; flex-wrap: wrap; gap: 2rem; margin-top: -3rem; border-radius: 12px; width: 84%; margin-left: auto; margin-right: auto; box-shadow: 0 20px 40px rgba(0,0,0,0.1); position: relative; z-index: 10; }
+        /* Statistics Bar */
+        .stats { 
+            background: var(--yellow); padding: 2.5rem; display: flex; justify-content: space-around; 
+            flex-wrap: wrap; gap: 2rem; margin-top: -4rem; border-radius: 16px; 
+            width: 84%; margin-left: auto; margin-right: auto; box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+            position: relative; z-index: 10;
+        }
         .stat-item { text-align: center; color: var(--navy); }
-        .stat-item h3 { font-size: 2rem; font-weight: 800; }
+        .stat-item h3 { font-size: 2.5rem; font-weight: 800; }
+        .stat-item p { font-weight: 700; font-size: 0.9rem; opacity: 0.8; }
 
-        /* General Sections */
+        /* General Section Styling */
         section { padding: 6rem 8%; }
-        .section-title { font-size: 2.5rem; text-align: center; margin-bottom: 4rem; font-weight: 800; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+        .section-title { font-size: 2.8rem; text-align: center; margin-bottom: 4rem; font-weight: 800; position: relative; }
+        .section-title::after { content: ''; display: block; width: 60px; height: 5px; background: var(--yellow); margin: 10px auto; border-radius: 10px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2.5rem; }
         
-        /* Mission/Vision/Why List */
-        .about-box { background: var(--off-white); padding: 3rem; border-radius: 20px; border-left: 8px solid var(--navy); margin-bottom: 2rem; }
+        /* About & Why Us */
+        .about-box { background: var(--off-white); padding: 3rem; border-radius: 24px; border-bottom: 8px solid var(--navy); transition: var(--transition); }
+        .about-box:hover { transform: translateY(-5px); }
         .feature-list { list-style: none; margin-top: 1.5rem; }
-        .feature-list li { margin-bottom: 1rem; padding-left: 1.5rem; position: relative; font-weight: 600; }
-        .feature-list li::before { content: '✓'; position: absolute; left: 0; color: #059669; font-weight: 800; }
+        .feature-list li { margin-bottom: 1.2rem; padding-left: 2rem; position: relative; font-weight: 600; }
+        .feature-list li::before { content: '✔'; position: absolute; left: 0; color: #059669; font-weight: 900; background: #d1fae5; width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.7rem; }
 
-        /* Courses Style */
+        /* Courses - THE HOVER POP EFFECT */
         .course-card { 
-            padding: 2.5rem; border-radius: 16px; background: var(--white); 
-            border: 2px solid #f1f5f9; transition: 0.4s; text-align: center;
-            display: flex; flex-direction: column; justify-content: space-between;
+            padding: 2.5rem; border-radius: 20px; background: var(--white); 
+            border: 1px solid #e2e8f0; transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
+            position: relative; display: flex; flex-direction: column; justify-content: space-between;
         }
-        .course-card:hover { border-color: var(--yellow); background: #fffdf0; }
-        .course-title-box { 
+        .course-card:hover { 
+            transform: scale(1.05); 
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15); 
+            border-color: var(--yellow); 
+        }
+        .course-badge { 
             background: var(--navy); color: var(--yellow); 
-            padding: 0.5rem 1rem; border-radius: 6px; 
-            display: inline-block; margin-bottom: 1.5rem;
-            font-size: 0.8rem; font-weight: 800; text-transform: uppercase;
+            padding: 0.4rem 1rem; border-radius: 50px; 
+            display: inline-block; margin-bottom: 1.2rem;
+            font-size: 0.75rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1px;
         }
-        .course-card p { margin-bottom: 1.5rem; font-size: 0.95rem; color: var(--slate); }
+        .course-card h3 { font-size: 1.4rem; margin-bottom: 1rem; color: var(--navy); }
+        .course-card p { font-size: 0.95rem; color: var(--slate); margin-bottom: 2rem; }
+
+        /* Success Stories Slider */
+        .slider-container { overflow: hidden; position: relative; padding: 2rem 0; }
+        .slider-track { display: flex; transition: transform 0.5s ease-in-out; gap: 2rem; }
+        .t-card { 
+            min-width: 300px; background: var(--navy); color: white; 
+            padding: 2.5rem; border-radius: 20px; border-right: 6px solid var(--yellow);
+        }
+        .t-name { display: block; margin-top: 1.5rem; color: var(--yellow); font-weight: 700; font-size: 1.1rem; }
+
+        /* Blog Section */
+        .blog-post { background: var(--white); padding: 2.5rem; border-radius: 20px; margin-bottom: 2rem; box-shadow: 0 4px 6px rgba(0,0,0,0.02); }
+        .blog-post h3 { color: var(--navy); margin-bottom: 1rem; }
 
         /* FAQ */
-        .faq-item { background: var(--off-white); padding: 1.5rem; border-radius: 10px; margin-bottom: 1rem; }
+        .faq-item { background: var(--off-white); padding: 1.5rem; border-radius: 12px; margin-bottom: 1rem; border-left: 4px solid var(--navy); }
         .faq-item h4 { margin-bottom: 0.5rem; color: var(--navy); }
-
-        /* Success Stories */
-        .testimonial-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
-        .t-card { background: var(--navy); color: white; padding: 2rem; border-radius: 12px; border-bottom: 5px solid var(--yellow); }
-
-        /* Blog */
-        .blog-post { margin-bottom: 4rem; padding-bottom: 2rem; border-bottom: 1px solid #eee; }
 
         /* Footer */
         footer { background: var(--navy); color: white; padding: 5rem 8% 2rem; }
-        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 3rem; }
-        .footer-links { list-style: none; margin-top: 1rem; }
-        .footer-links a { color: #cbd5e1; text-decoration: none; font-size: 0.9rem; }
+        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 4rem; }
+        .footer-links { list-style: none; margin-top: 1.2rem; }
+        .footer-links li { margin-bottom: 0.8rem; }
+        .footer-links a { color: #94a3b8; text-decoration: none; font-size: 0.95rem; transition: var(--transition); }
+        .footer-links a:hover { color: var(--yellow); padding-left: 5px; }
 
         @media (max-width: 768px) {
             .nav-links { display: none; }
-            .stats { width: 95%; flex-direction: column; }
+            .stats { width: 90%; flex-direction: column; text-align: center; }
+            .hero { padding: 8rem 5% 5rem; }
         }
     </style>
 </head>
@@ -105,104 +129,171 @@
     <nav>
         <a href="#" class="logo">Skill<span>Remotely.</span></a>
         <ul class="nav-links">
-            <li><a href="#about">The Academy</a></li>
-            <li><a href="#courses">Training</a></li>
-            <li><a href="#success">Success Stories</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#courses">Courses</a></li>
             <li><a href="#blog">Blog</a></li>
             <li><a href="#resources">Resources</a></li>
+            <li><a href="#success">Stories</a></li>
         </ul>
         <a href="https://chat.whatsapp.com/E6wKrCxo7zbCaWXa5ciyT3" class="btn btn-navy">Join Community</a>
     </nav>
 
     <header class="hero">
-        <h1>Stop dreaming of remote work. <br><span style="color:var(--yellow)">Start doing it.</span></h1>
-        <p>We train Africans to master high-paying digital skills, build world-class portfolios, and land global remote roles.</p>
+        <h1>Africa's #1 Academy for <br><span style="color:var(--yellow)">Remote Career Success</span></h1>
+        <p>Stop searching, start earning. We bridge the gap between your current skills and high-paying global remote roles.</p>
         <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-            <a href="#courses" class="btn btn-yellow">View All Courses</a>
-            <a href="https://skillremotelyacademy.selar.com/" class="btn btn-navy">Get Resources</a>
+            <a href="#courses" class="btn btn-yellow">Browse 9 Active Tracks</a>
+            <a href="https://chat.whatsapp.com/E6wKrCxo7zbCaWXa5ciyT3" class="btn btn-navy">Join 1000+ Members</a>
         </div>
     </header>
 
     <div class="stats">
-        <div class="stat-item"><h3>1000+</h3><p>ALUMNI</p></div>
-        <div class="stat-item"><h3>9</h3><p>COURSES</p></div>
-        <div class="stat-item"><h3>85%</h3><p>HIRE RATE</p></div>
+        <div class="stat-item"><h3>1,200+</h3><p>STUDENTS TRAINED</p></div>
+        <div class="stat-item"><h3>9</h3><p>EXPERT COURSES</p></div>
+        <div class="stat-item"><h3>4</h3><p>EXPERT COACHES</p></div>
+        <div class="stat-item"><h3>$250k+</h3><p>ALUMNI EARNINGS</p></div>
     </div>
 
     <section id="about">
         <div class="grid">
             <div class="about-box">
-                <h2 style="margin-bottom: 1rem;">Our Mission & Vision</h2>
-                <p>To eliminate unemployment by equipping 10,000+ young Africans with the specific skills needed by global CEOs. We envision becoming the #1 hub for remote talent acquisition in Africa.</p>
+                <h2 style="margin-bottom: 1.5rem;">Mission & Vision</h2>
+                <p>To eliminate unemployment by equipping 10,000+ young Africans with the specific skills needed by global CEOs. We are building the largest hub for remote talent acquisition in Africa.</p>
             </div>
-            <div class="about-box" style="border-left-color: var(--yellow);">
-                <h2 style="margin-bottom: 1rem;">Why We Are Different</h2>
-                <ul class="feature-list">
-                    <li>Strictly Practical Training (No Boring Theories)</li>
-                    <li>Direct Access to Global Remote Coaches</li>
-                    <li>Done-For-You Portfolio Building</li>
-                    <li>Real-Time Job Placement Support</li>
+            <div class="about-box" style="background: var(--navy); color: white;">
+                <h2 style="margin-bottom: 1.5rem; color: var(--yellow);">Why Choose Us?</h2>
+                <ul class="feature-list" style="color: #cbd5e1;">
+                    <li>Strictly Practical Training (No Fluff)</li>
+                    <li>Direct Mentorship from Global Coaches</li>
+                    <li>Done-For-You Portfolio Development</li>
+                    <li>Lifetime Community Access & Support</li>
                 </ul>
             </div>
         </div>
     </section>
 
     <section id="courses" style="background: var(--off-white);">
-        <h2 class="section-title">New Course Stack</h2>
+        <h2 class="section-title">The 9-Track Mastery Stack</h2>
         <div class="grid">
+            
             <div class="course-card">
-                <div class="course-title-box">Business Ops</div>
-                <h3>3-in-1 EA, Ops and OBM</h3>
-                <p>Comprehensive training for Executive Assistants and Online Business Managers.</p>
-                <a href="https://chat.whatsapp.com/E6wKrCxo7zbCaWXa5ciyT3" class="btn btn-navy">Join Community</a>
+                <div>
+                    <div class="course-badge">High Level Ops</div>
+                    <h3>3-in-1 EA, Ops & OBM</h3>
+                    <p>Transition into high-level business management and operations for global founders.</p>
+                </div>
+                <a href="https://chat.whatsapp.com/E6wKrCxo7zbCaWXa5ciyT3" class="btn btn-navy">Enroll via Community</a>
             </div>
+
             <div class="course-card">
-                <div class="course-title-box">Writing</div>
-                <h3>Ghostwriting Mega Bundle</h3>
-                <p>Master the art of ghostwriting and land high-paying writing contracts.</p>
-                <a href="https://skillremotelyacademy.selar.com/xg8j707127" class="btn btn-navy">Enroll Now</a>
+                <div>
+                    <div class="course-badge">Writing</div>
+                    <h3>Ghostwriting Mega Bundle</h3>
+                    <p>The ultimate guide to earning in dollars by writing for international clients and brands.</p>
+                </div>
+                <a href="https://skillremotelyacademy.selar.com/xg8j707127" class="btn btn-navy">Get the Bundle</a>
             </div>
+
             <div class="course-card">
-                <div class="course-title-box">Optimization</div>
-                <h3>DIY Upwork Optimization</h3>
-                <p>Self-paced guide to ranking #1 on Upwork search results.</p>
-                <a href="https://skillremotelyacademy.selar.com/pl7992205l" class="btn btn-navy">Enroll Now</a>
+                <div>
+                    <div class="course-badge">Optimization</div>
+                    <h3>DIY Upwork Optimization</h3>
+                    <p>A step-by-step blueprint to fixing your profile and ranking #1 on Upwork searches.</p>
+                </div>
+                <a href="https://skillremotelyacademy.selar.com/pl7992205l" class="btn btn-navy">Start Optimizing</a>
             </div>
+
             <div class="course-card">
-                <div class="course-title-box">Coaching</div>
-                <h3>Done-With-You Upwork</h3>
-                <p>Hands-on profile optimization package with expert guidance.</p>
-                <a href="https://skillremotelyacademy.selar.com/01177123vc" class="btn btn-navy">Enroll Now</a>
+                <div>
+                    <div class="course-badge">Premium Service</div>
+                    <h3>Upwork Profile Package</h3>
+                    <p>Let's build it together. A full overhaul of your Upwork presence for maximum conversions.</p>
+                </div>
+                <a href="https://skillremotelyacademy.selar.com/01177123vc" class="btn btn-navy">Book My Spot</a>
             </div>
+
             <div class="course-card">
-                <div class="course-title-box">Social Media</div>
-                <h3>Social Media Management</h3>
-                <p>Content strategy, growth, and analytics for global brands.</p>
+                <div>
+                    <div class="course-badge">Marketing</div>
+                    <h3>Social Media Management</h3>
+                    <p>Master content strategy, growth hacking, and high-ticket client management.</p>
+                </div>
+                <a href="https://skillremotelyacademy.selar.com/77xz8v1e68" class="btn btn-navy">Join the Class</a>
+            </div>
+
+            <div class="course-card">
+                <div>
+                    <div class="course-badge">Essential</div>
+                    <h3>VA Mastery</h3>
+                    <p>Become a world-class Virtual Assistant. Learn the tools, the mindset, and the skills.</p>
+                </div>
                 <a href="https://skillremotelyacademy.selar.com/77xz8v1e68" class="btn btn-navy">Enroll Now</a>
             </div>
+
             <div class="course-card">
-                <div class="course-title-box">Virtual Assistant</div>
-                <h3>VA Mastery</h3>
-                <p>Master the tools and administrative skills needed for global Founders.</p>
-                <a href="https://skillremotelyacademy.selar.com/77xz8v1e68" class="btn btn-navy">Enroll Now</a>
+                <div>
+                    <div class="course-badge">Sales</div>
+                    <h3>Job Application Bundle</h3>
+                    <p>Stop sending dead-end applications. Learn the secrets to landing global remote roles.</p>
+                </div>
+                <a href="https://skillremotelyacademy.selar.com/1772z6a042" class="btn btn-navy">Get the Bundle</a>
             </div>
+
             <div class="course-card">
-                <div class="course-title-box">Job Search</div>
-                <h3>Client Acquisition Bundle</h3>
-                <p>Scripts and strategies to find and land international clients.</p>
-                <a href="https://skillremotelyacademy.selar.com/1772z6a042" class="btn btn-navy">Enroll Now</a>
+                <div>
+                    <div class="course-badge">Web Dev</div>
+                    <h3>Portfolio Website</h3>
+                    <p>Get a stunning, professional portfolio website that makes recruiters say "YES" immediately.</p>
+                </div>
+                <a href="https://wa.me/2349023821992?text=Hello%20Skillremotely%20Academy,%20i%20would%20love%20to%20enroll%20for%20a%20Portfolio%20Website" class="btn btn-navy">Chat with a Coach</a>
             </div>
+
             <div class="course-card">
-                <div class="course-title-box">Web Presence</div>
-                <h3>Portfolio Website</h3>
-                <p>Get a professional portfolio built to showcase your remote skills.</p>
-                <a href="https://wa.me/2349023821992?text=Hello,%20Skillremotely%20Academy,%20i%20would%20love%20to%20enroll%20for%20Portfolio%20Website" class="btn btn-navy">Contact on WhatsApp</a>
+                <div>
+                    <div class="course-badge">Careers</div>
+                    <h3>Resume/CV Optimization</h3>
+                    <p>ATS-friendly, global-standard resume rewrite that gets you through the door.</p>
+                </div>
+                <a href="https://wa.me/2349023821992?text=Hello%20Skillremotely%20Academy,%20i%20would%20love%20to%20enroll%20for%20Resume/CV%20Optimization" class="btn btn-navy">Consult on WhatsApp</a>
             </div>
-            <div class="course-card">
-                <div class="course-title-box">Professional Brand</div>
-                <h3>Resume/CV Optimization</h3>
-                <p>ATS-friendly resumes designed to get you noticed by global recruiters.</p>
-                <a href="https://wa.me/2349023821992?text=Hello,%20Skillremotely%20Academy,%20i%20would%20love%20to%20enroll%20for%20Resume/CV%20Optimization" class="btn btn-navy">Contact on WhatsApp</a>
+
+        </div>
+    </section>
+
+    <section id="blog">
+        <h2 class="section-title">Insights for Remote Growth</h2>
+        <div class="grid">
+            <div class="blog-post">
+                <h3>Breaking the $2,000/mo Barrier</h3>
+                <p>Remote work is the new global economy. For Africans, the hurdle isn't just skill, it's positioning. We teach you how to price like a global expert.</p>
+            </div>
+            <div class="blog-post">
+                <h3>The Power of the 'Remote Stack'</h3>
+                <p>Mastering Slack, Notion, and Trello is 50% of the battle. If you can communicate flawlessly, your technical skills double in value.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="resources" style="background: var(--navy); color: white;">
+        <h2 class="section-title" style="color: var(--yellow);">Free Resources & Templates</h2>
+        <p style="text-align: center; margin-bottom: 3rem;">Ready-to-use templates for Virtual Assistants and Remote Pros.</p>
+        <div class="grid">
+            <div class="about-box" style="color: var(--navy);">
+                <h3>All Digital Templates</h3>
+                <p>Get access to our full library of onboarding checklists, scripts, and guides.</p>
+                <a href="https://skillremotelyacademy.selar.com/" class="btn btn-navy" style="margin-top:1rem; width:100%;">Visit Selar Store</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="success">
+        <h2 class="section-title">Success Stories</h2>
+        <div class="slider-container">
+            <div class="slider-track" id="slider">
+                <div class="t-card"><p>"I landed a $1,500/mo VA role after 3 weeks of training!"</p><span class="t-name">- Chioma A.</span></div>
+                <div class="t-card"><p>"My LinkedIn now attracts US recruiters daily thanks to the optimization."</p><span class="t-name">- David U.</span></div>
+                <div class="t-card"><p>"The OBM training helped me double my rates and work with top founders."</p><span class="t-name">- Sarah M.</span></div>
+                <div class="t-card"><p>"Got a Support role within 10 days of graduation. Legit results!"</p><span class="t-name">- Blessing W.</span></div>
             </div>
         </div>
     </section>
@@ -211,65 +302,28 @@
         <h2 class="section-title">Frequently Asked Questions</h2>
         <div style="max-width: 800px; margin: 0 auto;">
             <div class="faq-item">
-                <h4>Do I need a laptop to start?</h4>
-                <p>While some tasks can be started on mobile, a laptop is highly recommended for most global remote roles to ensure efficiency and tool compatibility.</p>
+                <h4>Are the courses live or recorded?</h4>
+                <p>We offer a mix of intensive live sessions and pre-recorded practical modules for flexibility.</p>
             </div>
             <div class="faq-item">
-                <h4>How long are the training programs?</h4>
-                <p>Training duration varies from 2 weeks to 6 weeks depending on the track you choose.</p>
+                <h4>Do I get a certificate?</h4>
+                <p>Yes, all graduates receive a SkillRemotely Academy Certificate of Mastery.</p>
             </div>
             <div class="faq-item">
-                <h4>Are the certifications recognized globally?</h4>
-                <p>Yes, we focus on portfolio-based proof of work which is the primary requirement for international remote employers.</p>
+                <h4>How do I pay?</h4>
+                <p>You can pay via Selar for digital products or direct transfer for coaching services.</p>
             </div>
         </div>
-    </section>
-
-    <section id="blog" style="background: var(--off-white);">
-        <h2 class="section-title">Latest from the Blog</h2>
-        <div class="blog-post">
-            <h3>Breaking the $2,000/mo Barrier in Africa</h3>
-            <p>Remote work is no longer just a trend; it is the new global economy. For many Africans, the biggest hurdle isn't the skill, but the mindset of positioning yourself as a global solution provider.</p>
-        </div>
-        <div class="blog-post">
-            <h3>Efficiency is the Currency of the Future</h3>
-            <p>The remote workspace prioritizes seamless communication and quick turnarounds. Mastering tools like Notion and Slack is just as important as your technical skill.</p>
-        </div>
-    </section>
-
-    <section id="resources">
-        <h2 class="section-title">Quick Templates & Resources</h2>
-        <div class="grid">
-            <div class="course-card">
-                <h3>Global Resource Library</h3>
-                <p>Access all our high-conversion templates and pricing calculators in one place.</p>
-                <a href="https://skillremotelyacademy.selar.com/" class="btn btn-navy">Browse Library</a>
-            </div>
-        </div>
-    </section>
-
-    <section id="success">
-        <h2 class="section-title">Success Stories</h2>
-        <div class="testimonial-grid">
-            <div class="t-card"><p>"I landed a $1,500/mo VA role after 3 weeks!"</p><span class="t-name">- Chioma A.</span></div>
-            <div class="t-card"><p>"My LinkedIn now attracts US recruiters daily."</p><span class="t-name">- David U.</span></div>
-            <div class="t-card"><p>"Finally earning in Dollars while living in Lagos!"</p><span class="t-name">- Emmanuel J.</span></div>
-        </div>
-    </section>
-
-    <section id="contact" style="background: var(--navy); color: white; text-align: center;">
-        <h2 style="margin-bottom: 2rem;">Ready to scale your career?</h2>
-        <a href="mailto:skillremotely@gmail.com" class="btn btn-yellow">Email Us: skillremotely@gmail.com</a>
     </section>
 
     <footer>
         <div class="footer-grid">
             <div>
                 <a href="#" class="logo" style="color:white">Skill<span>Remotely.</span></a>
-                <p style="margin-top:1rem; color:#94a3b8">Empowering 10,000+ Africans for global success.</p>
+                <p style="margin-top:1.5rem; color:#94a3b8">Empowering 10,000+ Africans to thrive in the global remote workforce through skills and community.</p>
             </div>
             <div>
-                <h4>Socials</h4>
+                <h4>Follow Our Journey</h4>
                 <ul class="footer-links">
                     <li><a href="https://linkedin.com/company/SkillRemotely">LinkedIn</a></li>
                     <li><a href="https://instagram.com/skillremotely">Instagram</a></li>
@@ -278,14 +332,50 @@
                 </ul>
             </div>
             <div>
-                <h4>Connect</h4>
+                <h4>Contact & Support</h4>
                 <ul class="footer-links">
-                    <li><a href="https://chat.whatsapp.com/E6wKrCxo7zbCaWXa5ciyT3">WhatsApp Community</a></li>
-                    <li><a href="https://skillremotelyacademy.selar.com/">Selar Store</a></li>
+                    <li><a href="mailto:skillremotely@gmail.com">skillremotely@gmail.com</a></li>
+                    <li><a href="https://wa.me/2349023821992">Direct WhatsApp Support</a></li>
+                    <li><a href="https://chat.whatsapp.com/E6wKrCxo7zbCaWXa5ciyT3">Join the Community</a></li>
                 </ul>
             </div>
         </div>
+        <div style="text-align: center; padding-top: 4rem; border-top: 1px solid #1e293b; margin-top: 4rem; font-size: 0.8rem; color: #64748b;">
+            © 2026 SkillRemotely Academy. All Rights Reserved.
+        </div>
     </footer>
 
+    <script>
+        // Simple Testimonial Slider logic
+        const slider = document.getElementById('slider');
+        let isDown = false;
+        let startX;
+        let scrollLeft;
+
+        slider.addEventListener('mousedown', (e) => {
+            isDown = true;
+            startX = e.pageX - slider.offsetLeft;
+            scrollLeft = slider.scrollLeft;
+        });
+        slider.addEventListener('mouseleave', () => isDown = false);
+        slider.addEventListener('mouseup', () => isDown = false);
+        slider.addEventListener('mousemove', (e) => {
+            if(!isDown) return;
+            e.preventDefault();
+            const x = e.pageX - slider.offsetLeft;
+            const walk = (x - startX) * 2;
+            slider.scrollLeft = scrollLeft - walk;
+        });
+
+        // Auto Scroll Slider
+        setInterval(() => {
+            if(!isDown) {
+                slider.scrollLeft += 1;
+                if (slider.scrollLeft >= (slider.scrollWidth - slider.clientWidth)) {
+                    slider.scrollLeft = 0;
+                }
+            }
+        }, 30);
+    </script>
 </body>
 </html>
